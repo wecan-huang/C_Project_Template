@@ -1,7 +1,5 @@
-#bin_rep_path="build/bin/test"
-
 #!/bin/bash
-echo "123"
+
 # 使用source呼叫子腳本可以取得子腳本變數，確保bash與bin在同一層
 source ./bash/find_project_root.sh
 
