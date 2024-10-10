@@ -54,7 +54,7 @@ int main(void)
 {
     /* call process */
 
-    printf("process return %d",process(10));/* x * 10 * 2 + 1 */
+    printf("process return %d\n",process(10));/* x * 10 * 2 + 1 */
 
     return 0;
 }
