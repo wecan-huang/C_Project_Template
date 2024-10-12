@@ -4,7 +4,16 @@ cmake_minimum_required(VERSION 3.10)
 # 預設產生src執行檔
 option(UNIT_TEST "Generate unit test?" OFF)
 
-# 基於選項創建不同執行檔
+# 預設產生debug類型執行檔
+option(DEBUG_BUILD_TYPE "Debug build type?" ON)
+
+
+# 基於DEBUG_BUILD_TYPE選項創建不同執行檔
+if(DEBUG_BUILD_TYPE)
+	set(CMAKE_BUILD_TYPE Debug)
+endif()
+
+# 基於UNIT_TEST選項創建不同執行檔
 if(UNIT_TEST)
 	message(STATUS "Generate unit test project...")
 
