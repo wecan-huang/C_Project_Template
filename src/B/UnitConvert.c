@@ -1,27 +1,32 @@
 /**
- * @file		main.c
- * @author		WK
- * @brief		This file is for demo.
- * @date		2024/10/09
+ * @file		UnitConvert.c
+ * @author		Lingyuan, Hsu
+ * @brief		This file is for convert the physical unit to the other one.
+ * @date		2018/11/23
  * @version		1.00
  *
  */
 
-#ifndef _main_c_
-#define _main_c_
+#ifndef _UnitConvert_c_
+#define _UnitConvert_c_
 
 /******************************************************************************/
 /*------------------------Included Dependency---------------------------------*/
 /******************************************************************************/
 #include <stdio.h>
+#include <math.h>
 #include "MacroDefine.h"
+#include "Extern_Macro_C2000.h"
 #include "TypeDefine.h"
-#include "A/MotionQueue.h"
-#include "A/MotionCommandHandler.h"
+#include "B/UnitConvert.h"
 
 /******************************************************************************/
 /*------------------------Macros----------------------------------------------*/
 /******************************************************************************/
+//TODO: Un-done interface.
+#define COF_ubMPolePair                 4
+#define PG1_ulGetPgPulsePerRev()		4096
+#define PG1_flGetPgPulsePerRevInv()		1024
 
 /******************************************************************************/
 /*------------------------Enumerations----------------------------------------*/
@@ -47,67 +52,40 @@
 /*------------------------Function Implementations----------------------------*/
 /******************************************************************************/
 
-/*!
-* @brief	Description : main function
-*
-* - @param	[in] void
-* - @retval	int
-*/
-int main(int argc, char *argv[]) 
+Float32 UC_flHz2Rdps( Float32 flVelHz )
 {
-	/* Initialize Motion Command Handler */
-	MQ_voPowerOnInit();
-	
-	Bool result = FALSE;
-	tMOTION_TARGET stTarget = {0, 1000, 100, 50}; // example target
-	
-	for(int i = 1; i < argc; i++)
-	{
-		/* call process */
-		printf("Start..., argv[%d]: %s\n", i, argv[i]);
+	/* Formula: 2*PI*(MaxHz)/PolePair */
+	return TWO_PI * flVelHz / (float)COF_ubMPolePair;
+}
 
-		/* Enqueue */
-		result = FALSE;
-		switch (argv[i][1])
-		{
-			case 'A': //MC_blAbsMove
-				result = MC_blAbsMove(stTarget, emMST_UART, FALSE);
-				break;
-			case 'R': //MC_blRelMove
-				result = MC_blRelMove(stTarget, emMST_UART, FALSE);
-				break;
-			case 'P': //MC_blDirectProfileMove
-				result = MC_blDirectProfileMove(stTarget, emMST_UART);
-				break;
-			case 'D': //MC_blDecMotion
-				result = MC_blDecMotion(stTarget, emMST_UART, FALSE, emMPT_QuickStop);
-				break;
-			default:
-				break;
-		}
-		printf("Enqueue result %d, \n",result);
-		printf("- - - - - - - - - - - - -\n");
-	}
-	printf("===========================\n");
-	for(int i = 1; i < argc; i++)
-	{
-		/* Dequeue */
-		tQUEUE_CMD_STRUCT *stQueueData;
-		result = MQ_blPullMotionQueue(&stQueueData);
-		printf("Dequeue result[%d] %d, \n",i, result);
-		printf("Dequeue data[%d]:\n emMotionCmd = %d\n emMotionSource = %d\n unValue1 = %d\n unValue2 = %f\n unValue3 = %f\n unValue4 = %f\n",
-				i,
-				stQueueData->emMotionCmd,
-				stQueueData->emMotionSource,
-				stQueueData->unValue1.sl,
-				stQueueData->unValue2.fl,
-				stQueueData->unValue3.fl,
-				stQueueData->unValue4.fl);
-		printf("- - - - - - - - - - - - -\n");
-	}
-
-    return 0;
+Float32 UC_flHz2Rpm (Float32 flVelHz)
+{
+	return flVelHz*MIN_TO_SEC/(float)COF_ubMPolePair;
 }
 
 
-#endif /* _main_c_ */
+Float32 UC_flRdps2Hz( Float32 flVelRdps )
+{
+	/* Formula: (MaxRdps)*PolePair/(2*PI) */
+	return flVelRdps * INV_TWO_PI * (float)COF_ubMPolePair;
+}
+
+Float32 UC_flPulse2Rad( SQWORD sqPosPulse )
+{
+	/* Formula: 2*PI*Position/ppr */
+	/* Note: if sqPosPulse is big, conversion from SQWORD to Float32 will lose accuracy! */
+
+	return TWO_PI * (Float32)sqPosPulse * PG1_flGetPgPulsePerRevInv();
+}
+
+Float32 UC_flRad2Pulse( Float32 flPosRad )
+{
+	/* Formula: Position*ppr/(2*PI) */
+	/* Note1: if conversion result is claimed as SLONG, conversion error from Float32 to SLONG will be truncated! 
+	 *        Then, the trajectory will loose accuracy.
+	 * Note2: if flPosRad is big, conversion from radian to pulse will lose accuracy! */
+
+	return flPosRad * PG1_ulGetPgPulsePerRev() * INV_TWO_PI;
+}
+
+#endif /* _UnitConvert_c_ */
