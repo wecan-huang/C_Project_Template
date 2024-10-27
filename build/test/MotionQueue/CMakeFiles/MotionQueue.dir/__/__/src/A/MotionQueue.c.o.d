@@ -1,0 +1,21 @@
+test/MotionQueue/CMakeFiles/MotionQueue.dir/__/__/src/A/MotionQueue.c.o: \
+ /cygdrive/c/Users/wecan.huang/Workspace/Wecan/C_Project_Template/src/A/MotionQueue.c \
+ /usr/include/stdio.h /usr/include/_ansi.h /usr/include/newlib.h \
+ /usr/include/_newlib_version.h /usr/include/sys/config.h \
+ /usr/include/machine/ieeefp.h /usr/include/sys/features.h \
+ /usr/include/cygwin/config.h /usr/include/sys/cdefs.h \
+ /usr/include/machine/_default_types.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/12/include/stddef.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/12/include/stdarg.h \
+ /usr/include/sys/reent.h /usr/include/_ansi.h /usr/include/sys/_types.h \
+ /usr/include/machine/_types.h /usr/include/sys/lock.h \
+ /usr/include/sys/stdio.h /usr/include/stdlib.h \
+ /usr/include/machine/stdlib.h /usr/include/alloca.h \
+ /usr/include/cygwin/stdlib.h /usr/include/cygwin/wait.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/12/include/stdbool.h \
+ /cygdrive/c/Users/wecan.huang/Workspace/Wecan/C_Project_Template/src/MacroDefine.h \
+ /cygdrive/c/Users/wecan.huang/Workspace/Wecan/C_Project_Template/src/TypeDefine.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/12/include/stdint.h /usr/include/stdint.h \
+ /usr/include/sys/_intsup.h /usr/include/sys/_stdint.h \
+ /cygdrive/c/Users/wecan.huang/Workspace/Wecan/C_Project_Template/src/A/Queue.h \
+ /cygdrive/c/Users/wecan.huang/Workspace/Wecan/C_Project_Template/src/A/MotionQueue.h

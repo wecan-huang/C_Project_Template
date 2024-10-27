@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g -Wl,--enable-auto-import CMakeFiles/MotionQueue.dir/MotionQueue.cpp.o CMakeFiles/MotionQueue.dir/__/__/src/A/MotionQueue.c.o -o ../../bin/test/MotionQueue.exe -Wl,--out-implib,../../bin/test/libMotionQueue.dll.a -Wl,--major-image-version,0,--minor-image-version,0  ../../lib/libgtest.a ../../lib/libgtest_main.a -lpthread ../../lib/libgtest.a 
