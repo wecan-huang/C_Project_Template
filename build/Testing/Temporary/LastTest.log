@@ -1,10 +1,10 @@
-Start testing: Oct 27 23:17
+Start testing: Oct 27 23:35
 ----------------------------------------------------------
 1/3 Testing: test_case_MotionCommandHandler
 1/3 Test: test_case_MotionCommandHandler
 Command: "/cygdrive/c/Users/wecan.huang/Workspace/Wecan/C_Project_Template/build/bin/test/MotionCommandHandler.exe" "--gtest_output=xml:/cygdrive/c/Users/wecan.huang/Workspace/Wecan/C_Project_Template/doc/test_case_MotionCommandHandler.xml"
 Directory: /cygdrive/c/Users/wecan.huang/Workspace/Wecan/C_Project_Template/build/test/MotionCommandHandler
-"test_case_MotionCommandHandler" start time: Oct 27 23:17
+"test_case_MotionCommandHandler" start time: Oct 27 23:35
 Output:
 ----------------------------------------------------------
 Running main() from /cygdrive/c/Users/wecan.huang/Workspace/Wecan/C_Project_Template/third_party/gtest/googletest/src/gtest_main.cc
@@ -91,10 +91,10 @@ Running main() from /cygdrive/c/Users/wecan.huang/Workspace/Wecan/C_Project_Temp
 [==========] 34 tests from 3 test suites ran. (0 ms total)
 [  PASSED  ] 34 tests.
 <end of output>
-Test time =   0.36 sec
+Test time =   0.38 sec
 ----------------------------------------------------------
 Test Passed.
-"test_case_MotionCommandHandler" end time: Oct 27 23:17
+"test_case_MotionCommandHandler" end time: Oct 27 23:35
 "test_case_MotionCommandHandler" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -102,7 +102,7 @@ Test Passed.
 2/3 Test: test_case_MotionQueue
 Command: "/cygdrive/c/Users/wecan.huang/Workspace/Wecan/C_Project_Template/build/bin/test/MotionQueue.exe" "--gtest_output=xml:/cygdrive/c/Users/wecan.huang/Workspace/Wecan/C_Project_Template/doc/test_case_MotionQueue.xml"
 Directory: /cygdrive/c/Users/wecan.huang/Workspace/Wecan/C_Project_Template/build/test/MotionQueue
-"test_case_MotionQueue" start time: Oct 27 23:17
+"test_case_MotionQueue" start time: Oct 27 23:35
 Output:
 ----------------------------------------------------------
 Running main() from /cygdrive/c/Users/wecan.huang/Workspace/Wecan/C_Project_Template/third_party/gtest/googletest/src/gtest_main.cc
@@ -155,10 +155,10 @@ Running main() from /cygdrive/c/Users/wecan.huang/Workspace/Wecan/C_Project_Temp
 [==========] 17 tests from 3 test suites ran. (0 ms total)
 [  PASSED  ] 17 tests.
 <end of output>
-Test time =   0.36 sec
+Test time =   0.37 sec
 ----------------------------------------------------------
 Test Passed.
-"test_case_MotionQueue" end time: Oct 27 23:17
+"test_case_MotionQueue" end time: Oct 27 23:35
 "test_case_MotionQueue" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -166,7 +166,7 @@ Test Passed.
 3/3 Test: test_case_Queue
 Command: "/cygdrive/c/Users/wecan.huang/Workspace/Wecan/C_Project_Template/build/bin/test/Queue.exe" "--gtest_output=xml:/cygdrive/c/Users/wecan.huang/Workspace/Wecan/C_Project_Template/doc/test_case_Queue.xml"
 Directory: /cygdrive/c/Users/wecan.huang/Workspace/Wecan/C_Project_Template/build/test/Queue
-"test_case_Queue" start time: Oct 27 23:17
+"test_case_Queue" start time: Oct 27 23:35
 Output:
 ----------------------------------------------------------
 Running main() from /cygdrive/c/Users/wecan.huang/Workspace/Wecan/C_Project_Template/third_party/gtest/googletest/src/gtest_main.cc
@@ -246,8 +246,8 @@ Running main() from /cygdrive/c/Users/wecan.huang/Workspace/Wecan/C_Project_Temp
 Test time =   0.39 sec
 ----------------------------------------------------------
 Test Passed.
-"test_case_Queue" end time: Oct 27 23:17
+"test_case_Queue" end time: Oct 27 23:35
 "test_case_Queue" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Oct 27 23:17
+End testing: Oct 27 23:35
