@@ -1,4 +1,4 @@
-test_case_MotionCommandHandler 2 0.188737
-test_case_MotionQueue 2 0.183534
-test_case_Queue 2 0.196053
+test_case_MotionCommandHandler 3 0.14065
+test_case_MotionQueue 3 0.133812
+test_case_Queue 3 0.152156
 ---
